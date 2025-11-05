@@ -13,10 +13,16 @@
 
     <body>
         <referenceContainer name="before.body.end">
+            <container name="alpine-js">
                 <block class="Magento\Framework\View\Element\Template"
-                       name="init.alpinejs"
+                       before="-"
+                       name="alpine-js.loader"
                        template="MageOS_AlpineLoader::script/alpine-csp.phtml"/>
-        </referenceContainer>
 
+                <container name="alpine-js.store"/>
+                <container name="alpine-js.directive"/>
+                <container name="alpine-js.component"/>
+            </container>
+        </referenceContainer>
     </body>
 </page>
