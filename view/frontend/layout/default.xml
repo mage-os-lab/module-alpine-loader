@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * Alpine frontend components are inspired and created starting from Loki_Base and Loki_Theme
+ *
+ * loki-theme/magento2-luma-components
+ * Version: 0.0.9
+ * Copyright: 2025 Jisse Reitsma
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:View/Layout:etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="before.body.end">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="init.alpinejs"
+                       template="MageOS_AlpineLoader::script/alpine-csp.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

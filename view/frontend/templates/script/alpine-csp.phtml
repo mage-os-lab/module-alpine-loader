@@ -1,0 +1,17 @@
+<?php declare(strict_types=1);
+
+/**
+ * loki/magento2-base
+ * Version: 1.0.4
+ * Copyright: 2025 Jisse Reitsma
+ */
+
+use Magento\Framework\View\Element\Template;
+
+/** @version 1.0.4 */
+/** @var Template $block */
+
+$jsUrl = $block->getViewFileUrl('MageOS_AlpineLoader::js/alpine-csp.js');
+$defer = (bool)$block->getDefer();
+?>
+<script defer src="<?= /* @noEscape */ $jsUrl ?>" <?php if ($defer) : ?>defer<?php endif; ?>></script>

@@ -1,0 +1,25 @@
+{
+    "name": "mage-os/module-alpine-loader",
+    "description": "Alpine JS initialization module",
+    "type": "magento2-module",
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "authors": [
+        {
+            "name": "Mahmoud Abdelmalek",
+            "email": "mahmoud.m.abdelmalek@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageOS\\AlpineJS\\": ""
+        }
+    }
+}
