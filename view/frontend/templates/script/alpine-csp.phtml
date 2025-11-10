@@ -7,9 +7,14 @@
  */
 
 use Magento\Framework\View\Element\Template;
+use MageOS\AlpineJS\Util\CurrentTheme;
 
-/** @version 1.0.4 */
 /** @var Template $block */
+/** @var CurrentTheme $currentTheme */
+$currentTheme = $block->getCurrentTheme();
+if ($currentTheme->isHyva()) {
+    return;
+}
 
 $jsUrl = $block->getViewFileUrl('MageOS_AlpineLoader::js/alpine-csp.js');
 $defer = (bool)$block->getDefer();

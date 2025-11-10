@@ -14,10 +14,14 @@
     <body>
         <referenceContainer name="before.body.end">
             <container name="alpine-js">
-                <block class="Magento\Framework\View\Element\Template"
-                       before="-"
-                       name="alpine-js.loader"
-                       template="MageOS_AlpineLoader::script/alpine-csp.phtml"/>
+                <block
+                    before="-"
+                    name="alpine-js.loader"
+                    template="MageOS_AlpineLoader::script/alpine-csp.phtml">
+                    <arguments>
+                        <argument name="current_theme" xsi:type="object">MageOS\AlpineJS\Util\CurrentTheme</argument>
+                    </arguments>
+                </block>
 
                 <container name="alpine-js.store"/>
                 <container name="alpine-js.directive"/>
