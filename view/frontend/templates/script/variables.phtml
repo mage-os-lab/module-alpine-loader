@@ -1,0 +1,28 @@
+<?php
+declare(strict_types=1);
+
+use MageOS\AlpineLoader\ViewModel\FormKeyValue;
+use MageOS\AlpineLoader\ViewModel\LocaleCode;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @version 1.1.11 */
+/** @var Template $block */
+/** @var FormKeyValue $formKeyValue */
+/** @var LocaleCode $localeCode */
+/** @var Escaper $escaper */
+
+$formKeyValue = $block->getFormKeyValue();
+$localeCode = $block->getLocaleCode();
+$mobileWidth = $block->getMobileWidth();
+if (!is_numeric($mobileWidth) || $mobileWidth < 100) {
+    $mobileWidth = 767;
+}
+?>
+<script>
+    var CURRENT_LOCALE = '<?= $escaper->escapeUrl($localeCode->getCode()) ?>';
+    var THEME_URL = '<?= $escaper->escapeUrl($block->getViewFileUrl('')) ?>';
+    var FORM_KEY = '<?= $escaper->escapeHtml($formKeyValue->get()) ?>';
+    var CURRENT_URL = window.location.href.split('?')[0];
+    var IS_MOBILE = ((window.innerWidth > 0) ? window.innerWidth : screen.width) < <?= (int)$mobileWidth ?>; // @todo: What happens if you change browser width on the fly?
+</script>
