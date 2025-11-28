@@ -19,7 +19,17 @@
                     name="alpine-js.loader"
                     template="MageOS_AlpineLoader::script/alpine-csp.phtml">
                     <arguments>
-                        <argument name="current_theme" xsi:type="object">MageOS\AlpineJS\Util\CurrentTheme</argument>
+                        <argument name="current_theme" xsi:type="object">MageOS\AlpineLoader\Util\CurrentTheme</argument>
+                    </arguments>
+                </block>
+
+                <block
+                    before="-"
+                    name="alpine-js.variables"
+                    template="MageOS_AlpineLoader::script/variables.phtml">
+                    <arguments>
+                        <argument name="form_key_value" xsi:type="object">MageOS\AlpineLoader\Util\FormKeyValue</argument>
+                        <argument name="locale_code" xsi:type="object">MageOS\AlpineLoader\Util\LocaleCode</argument>
                     </arguments>
                 </block>
 

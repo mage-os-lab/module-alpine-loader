@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace MageOS\AlpineJS\Util;
+namespace MageOS\AlpineLoader\Util;
 
 use Magento\Framework\View\DesignInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;

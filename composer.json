@@ -12,6 +12,10 @@
         {
             "name": "Mahmoud Abdelmalek",
             "email": "mahmoud.m.abdelmalek@gmail.com"
+        },
+        {
+            "name": "Jisse Reitsma",
+            "email": "jisse@loki-extensions.com"
         }
     ],
     "autoload": {
@@ -19,7 +23,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MageOS\\AlpineJS\\": ""
+            "MageOS\\AlpineLoader\\": ""
         }
     }
 }
