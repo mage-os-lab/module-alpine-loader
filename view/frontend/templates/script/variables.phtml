@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
-use MageOS\AlpineLoader\ViewModel\FormKeyValue;
-use MageOS\AlpineLoader\ViewModel\LocaleCode;
+use Magento\Framework\View\Helper\SecureHtmlRenderer;
+use MageOS\AlpineLoader\Util\FormKeyValue;
+use MageOS\AlpineLoader\Util\LocaleCode;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 
@@ -11,6 +12,7 @@ use Magento\Framework\View\Element\Template;
 /** @var FormKeyValue $formKeyValue */
 /** @var LocaleCode $localeCode */
 /** @var Escaper $escaper */
+/** @var SecureHtmlRenderer $secureRenderer */
 
 $formKeyValue = $block->getFormKeyValue();
 $localeCode = $block->getLocaleCode();
@@ -18,11 +20,11 @@ $mobileWidth = $block->getMobileWidth();
 if (!is_numeric($mobileWidth) || $mobileWidth < 100) {
     $mobileWidth = 767;
 }
-?>
-<script>
-    var CURRENT_LOCALE = '<?= $escaper->escapeUrl($localeCode->getCode()) ?>';
-    var THEME_URL = '<?= $escaper->escapeUrl($block->getViewFileUrl('')) ?>';
-    var FORM_KEY = '<?= $escaper->escapeHtml($formKeyValue->get()) ?>';
-    var CURRENT_URL = window.location.href.split('?')[0];
-    var IS_MOBILE = ((window.innerWidth > 0) ? window.innerWidth : screen.width) < <?= (int)$mobileWidth ?>; // @todo: What happens if you change browser width on the fly?
-</script>
+
+$script = '';
+$script .= "var CURRENT_LOCALE = '".$escaper->escapeUrl($localeCode->getCode())."';";
+$script .= "var FORM_KEY = '".$escaper->escapeHtml($formKeyValue->get())."';";
+$script .= "var CURRENT_URL = window.location.href.split('?')[0];";
+$script .= "var IS_MOBILE = ((window.innerWidth > 0) ? window.innerWidth : screen.width) < ". (int)$mobileWidth.";";
+echo $secureRenderer->renderTag('script', [], $script, false);
+
