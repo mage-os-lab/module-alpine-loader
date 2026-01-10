@@ -17,11 +17,7 @@
                 <block
                     before="-"
                     name="alpine-js.loader"
-                    template="MageOS_AlpineLoader::script/alpine-csp.phtml">
-                    <arguments>
-                        <argument name="current_theme" xsi:type="object">MageOS\AlpineLoader\Util\CurrentTheme</argument>
-                    </arguments>
-                </block>
+                    template="MageOS_AlpineLoader::script/alpine-csp.phtml"/>
 
                 <block
                     before="-"
