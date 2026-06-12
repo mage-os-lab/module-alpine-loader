@@ -14,6 +14,7 @@
     <body>
         <referenceContainer name="before.body.end">
             <container name="alpine-js">
+                <container name="alpine-js.plugin"/>
                 <block
                     before="-"
                     name="alpine-js.loader"
@@ -29,7 +30,6 @@
                     </arguments>
                 </block>
 
-                <container name="alpine-js.plugin"/>
                 <container name="alpine-js.store"/>
                 <container name="alpine-js.directive"/>
                 <container name="alpine-js.component"/>
