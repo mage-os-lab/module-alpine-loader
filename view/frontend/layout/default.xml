@@ -29,6 +29,7 @@
                     </arguments>
                 </block>
 
+                <container name="alpine-js.plugin"/>
                 <container name="alpine-js.store"/>
                 <container name="alpine-js.directive"/>
                 <container name="alpine-js.component"/>
