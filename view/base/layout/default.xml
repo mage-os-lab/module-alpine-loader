@@ -21,7 +21,7 @@
                     name="alpine-js.loader"
                     template="MageOS_AlpineLoader::script/alpine-js-loader.phtml">
                     <arguments>
-                        <argument name="csp" xsi:type="boolean">true</argument>
+                        <argument name="csp" xsi:type="boolean">false</argument>
                     </arguments>
                 </block>
 
