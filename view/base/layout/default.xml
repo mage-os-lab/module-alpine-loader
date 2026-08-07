@@ -15,10 +15,15 @@
         <referenceContainer name="before.body.end">
             <container name="alpine-js">
                 <container name="alpine-js.plugin"/>
+
                 <block
                     before="-"
                     name="alpine-js.loader"
-                    template="MageOS_AlpineLoader::script/alpine-csp.phtml"/>
+                    template="MageOS_AlpineLoader::script/alpine-js-loader.phtml">
+                    <arguments>
+                        <argument name="csp" xsi:type="boolean">true</argument>
+                    </arguments>
+                </block>
 
                 <block
                     before="-"

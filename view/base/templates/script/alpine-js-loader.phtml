@@ -10,7 +10,9 @@ use Magento\Framework\View\Element\Template;
 
 /** @var Template $block */
 
-$jsUrl = $block->getViewFileUrl('MageOS_AlpineLoader::js/alpine-csp.js');
+$csp = (bool)$block->getCsp();
+$jsSource = $csp ? 'alpine-csp.min.js' : 'alpine.min.js';
+$jsUrl = $block->getViewFileUrl('MageOS_AlpineLoader::js/'.$jsSource);
 $defer = (bool)$block->getDefer();
 ?>
 <script defer src="<?= /* @noEscape */ $jsUrl ?>" <?php if ($defer) : ?>defer<?php endif; ?>></script>
