@@ -14,24 +14,22 @@
     <body>
         <referenceContainer name="before.body.end">
             <container name="alpine-js">
-                <container name="alpine-js.plugin"/>
-
                 <block
-                    before="-"
-                    name="alpine-js.loader"
-                    template="MageOS_AlpineLoader::script/alpine-js-loader.phtml">
-                    <arguments>
-                        <argument name="csp" xsi:type="boolean">false</argument>
-                    </arguments>
-                </block>
-
-                <block
-                    before="-"
                     name="alpine-js.variables"
                     template="MageOS_AlpineLoader::script/variables.phtml">
                     <arguments>
                         <argument name="form_key_value" xsi:type="object">MageOS\AlpineLoader\Util\FormKeyValue</argument>
                         <argument name="locale_code" xsi:type="object">MageOS\AlpineLoader\Util\LocaleCode</argument>
+                    </arguments>
+                </block>
+
+                <container name="alpine-js.plugin"/>
+
+                <block
+                    name="alpine-js.loader"
+                    template="MageOS_AlpineLoader::script/alpine-js-loader.phtml">
+                    <arguments>
+                        <argument name="csp" xsi:type="boolean">false</argument>
                     </arguments>
                 </block>
 
